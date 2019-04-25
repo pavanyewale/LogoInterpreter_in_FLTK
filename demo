@@ -1,0 +1,18 @@
+TO tree :size
+   if :size < 5 [forward :size back :size stop]
+   forward :size/3
+   left 30 tree :size*2/3 right 30
+   forward :size/6
+   right 25 tree :size/2 left 25
+   forward :size/3
+   right 25 tree :size/2 left 25
+   forward :size/6
+   back :size
+END
+clearscreen
+tree 150
+
+TO tree :size\nif :size<5 [\nforward :size\nback :size\nstop\n]\nforward :size/3\nleft 30 \ntree :size*2/3 \nright 30\nforward :size/6\nright 25\ntree :size/2\nleft 25\nforward :size/3\nright 25\ntree :size/2\nleft 25\nforward :size/6\nback :size\nEND\ntree 150"
+
+
+TO fern :size :sign\nif :size < 1 [ \nstop \n]\nforward :size\nright 70*:sign \nfern :size*0.5 :sign*-1 \nlt 70*:sign\nfd :size\nleft 70*:sign \nfern :size*0.5 :sign*right 70*:sign\nright 7*:sign \nfern :size-1 :sign \nleft 7*:sign\nback :size*2\nEND\nfern 25 1
